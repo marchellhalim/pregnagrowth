@@ -48,14 +48,14 @@ const createProfile = async (req, res) => {
         const { bio, berat_badan, umur_janin, jam_tidur, userId } = req.body;
         const profile = await prisma.profile.create({
             data: {
-                bio,
-                berat_badan,
-                umur_janin,
-                jam_tidur,
-                userId
+                bio: bio,
+                berat_badan: berat_badan,
+                umur_janin: umur_janin,
+                jam_tidur: jam_tidur,
+                userId: parseInt(userId)
             }
         });
-        return res.status(200).json({
+        return res.status(201).json({
             success: true,
             profile
         });
