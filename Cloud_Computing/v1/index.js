@@ -5,6 +5,8 @@ const authRouter = require('./router/authRouter');
 const roleRouter = require('./router/routerRole');
 const userRouter = require('./router/userRouter');
 const profileRouter = require('./router/profileRouter');
+const predictRouter = require('./router/predictRouter');
+const questionRouter = require('./router/questionRouter');
 const cors = require('cors');
 
 app.use(cors());
@@ -15,6 +17,8 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/role', roleRouter);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/profile', profileRouter);
+app.use('/api/v1/predict', predictRouter);
+app.use('/api/v1/question', questionRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')

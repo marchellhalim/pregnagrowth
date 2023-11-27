@@ -1,7 +1,14 @@
 const PrismaClient = require('@prisma/client').PrismaClient;
 const prisma = new PrismaClient();
+const faqs = require('../v1/dataset/faqs.json')
 
-async function main(){
+async function main() {
+    const role = await prisma.role.createMany({
+        data: [
+            { name: "admin" },
+            { name: "user" }
+        ]
+    });
     const user = await prisma.user.create({
         data: {
             name: "admin",
@@ -12,7 +19,11 @@ async function main(){
             roleId: 1
         }
     });
-    console.log(user);
+    console.log({user, role});
+    const faqq = await prisma.faq.createMany({
+        data: faqs
+    });
+    console.log({faqq});
 }
 
 main()

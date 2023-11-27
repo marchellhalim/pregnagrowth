@@ -41,3 +41,20 @@ model Profile {
   users User    @relation(fields: [userId], references: [id])
   userId Int
 }
+
+model Upload {
+  id    Int     @id @default(autoincrement())
+  url   String?
+  prediction String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Faq {
+  id    Int     @id @default(autoincrement())
+  question   String?
+  answer String @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  @@index([question], name: "question_UNIQUE")
+}

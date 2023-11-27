@@ -1,0 +1,139 @@
+[
+  {
+    "question": "Apa itu ibu hamil?",
+    "answer":
+      "Ibu hamil adalah seorang wanita yang sedang mengandung atau mengalami kehamilan. Kehamilan adalah masa dimana seorang wanita mengandung janin di dalam rahimnya. Kehamilan biasanya berlangsung selama 9 bulan atau 40 minggu. Kehamilan yang berlangsung kurang dari 37 minggu disebut dengan kehamilan prematur atau kehamilan prematur. Sedangkan kehamilan yang berlangsung lebih dari 42 minggu disebut dengan kehamilan postmatur atau kehamilan melewati waktu."
+  },
+  {
+    "question": "Apa itu kehamilan?",
+    "answer":
+      "Kehamilan adalah masa dimana seorang wanita mengandung janin di dalam rahimnya. Kehamilan biasanya berlangsung selama 9 bulan atau 40 minggu. Kehamilan yang berlangsung kurang dari 37 minggu disebut dengan kehamilan prematur atau kehamilan prematur. Sedangkan kehamilan yang berlangsung lebih dari 42 minggu disebut dengan kehamilan postmatur atau kehamilan melewati waktu."
+  },
+  {
+    "question": "Apa itu kehamilan prematur?",
+    "answer":
+      "Kehamilan prematur adalah kehamilan yang berlangsung kurang dari 37 minggu. Kehamilan prematur juga disebut dengan kehamilan prematur. Sedangkan kehamilan yang berlangsung lebih dari 42 minggu disebut dengan kehamilan postmatur atau kehamilan melewati waktu."
+  },
+  {
+    "question": "Apa itu kehamilan postmatur?",
+    "answer":
+      "Kehamilan postmatur adalah kehamilan yang berlangsung lebih dari 42 minggu. Kehamilan postmatur juga disebut dengan kehamilan melewati waktu. Sedangkan kehamilan yang berlangsung kurang dari 37 minggu disebut dengan kehamilan prematur atau kehamilan prematur."
+  },
+  {
+    "question": "Apa itu kehamilan ektopik?",
+    "answer" :
+      "Kehamilan ektopik adalah kehamilan yang terjadi di luar rahim. Kehamilan ektopik juga disebut dengan kehamilan di luar kandungan. Kehamilan ektopik biasanya terjadi di saluran tuba. Kehamilan ektopik yang terjadi di saluran tuba disebut dengan kehamilan ektopik tuba. Kehamilan ektopik yang terjadi di ovarium disebut dengan kehamilan ektopik ovarium. Kehamilan ektopik yang terjadi di serviks disebut dengan kehamilan ektopik serviks. Kehamilan ektopik yang terjadi di perut disebut dengan kehamilan ektopik perut. Kehamilan ektopik yang terjadi di rahim disebut dengan kehamilan ektopik rahim."
+    },
+    {
+        "question": "Apa itu kehamilan ektopik tuba?",
+        "answer" :
+            "Kehamilan ektopik tuba adalah kehamilan ektopik yang terjadi di saluran tuba. Kehamilan ektopik tuba juga disebut dengan kehamilan ektopik di saluran tuba. Kehamilan ektopik tuba biasanya terjadi di saluran tuba kanan. Kehamilan ektopik tuba yang terjadi di saluran tuba kanan disebut dengan kehamilan ektopik tuba kanan. Kehamilan ektopik tuba yang terjadi di saluran tuba kiri disebut dengan kehamilan ektopik tuba kiri."
+        },
+        {
+        "question": "Apa itu kehamilan ektopik ovarium?",
+        "answer" :
+            "Kehamilan ektopik ovarium adalah kehamilan ektopik yang terjadi di ovarium. Kehamilan ektopik ovarium juga disebut dengan kehamilan ektopik di ovarium. Kehamilan ektopik ovarium biasanya terjadi di ovarium kanan. Kehamilan ektopik ovarium yang terjadi di ovarium kanan disebut dengan kehamilan ektopik ovarium kanan. Kehamilan ektopik ovarium yang terjadi di ovarium kiri disebut dengan kehamilan ektopik ovarium kiri."
+        },
+        {
+        "question": "Apa itu kehamilan ektopik serviks?",
+        "answer" :
+            "Kehamilan ektopik serviks adalah kehamilan ektopik yang terjadi di serviks. Kehamilan ektopik serviks juga disebut dengan kehamilan ektopik di serviks. Kehamilan ektopik serviks biasanya terjadi di serviks kanan. Kehamilan ektopik serviks yang terjadi di serviks kanan disebut dengan kehamilan ektopik serviks kanan. Kehamilan ektopik serviks yang terjadi di serviks kiri disebut dengan kehamilan ektopik serviks kiri."
+        },
+        {
+        "question": "Apa itu kehamilan ektopik perut?",
+        "answer" :
+            "Kehamilan ektopik perut adalah kehamilan ektopik yang terjadi di perut. Kehamilan ektopik perut juga disebut dengan kehamilan ektopik di perut. Kehamilan ektopik perut biasanya terjadi di perut kanan. Kehamilan ektopik perut yang terjadi di perut kanan disebut dengan kehamilan ektopik perut kanan. Kehamilan ektopik perut yang terjadi di perut kiri disebut dengan kehamilan ektopik perut kiri."
+        },
+        {
+        "question": "Apa itu kehamilan ektopik rahim?",
+        "answer" :
+            "Kehamilan ektopik rahim adalah kehamilan ektopik yang terjadi di rahim. Kehamilan ektopik rahim juga disebut dengan kehamilan ektopik di rahim. Kehamilan ektopik rahim biasanya terjadi di rahim kanan. Kehamilan ektopik rahim yang terjadi di rahim kanan disebut dengan kehamilan ektopik rahim kanan. Kehamilan ektopik rahim yang terjadi di rahim kiri disebut dengan kehamilan ektopik rahim kiri."
+        },
+        {
+        "question": "Apa itu kehamilan kembar?",
+        "answer" :
+            "Kehamilan kembar adalah kehamilan yang mengandung lebih dari satu janin. Kehamilan kembar juga disebut dengan kehamilan ganda. Kehamilan kembar biasanya terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur disebut dengan kehamilan kembar fraternal. Kehamilan kembar yang terjadi karena pembuahan yang terjadi di satu sel telur disebut dengan kehamilan kembar identik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar identik?",
+        "answer" :
+            "Kehamilan kembar identik adalah kehamilan kembar yang terjadi karena pembuahan yang terjadi di satu sel telur. Kehamilan kembar identik juga disebut dengan kehamilan kembar monozigotik. Kehamilan kembar identik biasanya terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua. Kehamilan kembar identik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua disebut dengan kehamilan kembar identik monokorionik diamniotik. Kehamilan kembar identik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua disebut dengan kehamilan kembar identik monokorionik monoamniotik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar fraternal?",
+        "answer" :
+            "Kehamilan kembar fraternal adalah kehamilan kembar yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal juga disebut dengan kehamilan kembar dizigotik. Kehamilan kembar fraternal biasanya terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur disebut dengan kehamilan kembar fraternal dikorionik diamniotik. Kehamilan kembar fraternal yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur disebut dengan kehamilan kembar fraternal dikorionik monoamniotik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar identik monokorionik diamniotik?",
+        "answer" :
+            "Kehamilan kembar identik monokorionik diamniotik adalah kehamilan kembar identik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua. Kehamilan kembar identik monokorionik diamniotik juga disebut dengan kehamilan kembar identik monokorionik diamniotik. Kehamilan kembar identik monokorionik diamniotik biasanya terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua. Kehamilan kembar identik monokorionik diamniotik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua disebut dengan kehamilan kembar identik monokorionik diamniotik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar identik monokorionik monoamniotik?",
+        "answer" :
+            "Kehamilan kembar identik monokorionik monoamniotik adalah kehamilan kembar identik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua. Kehamilan kembar identik monokorionik monoamniotik juga disebut dengan kehamilan kembar identik monokorionik monoamniotik. Kehamilan kembar identik monokorionik monoamniotik biasanya terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua. Kehamilan kembar identik monokorionik monoamniotik yang terjadi karena pembuahan yang terjadi di satu sel telur yang kemudian membelah menjadi dua disebut dengan kehamilan kembar identik monokorionik monoamniotik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar fraternal dikorionik diamniotik?",
+        "answer" :
+            "Kehamilan kembar fraternal dikorionik diamniotik adalah kehamilan kembar fraternal yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal dikorionik diamniotik juga disebut dengan kehamilan kembar fraternal dikorionik diamniotik. Kehamilan kembar fraternal dikorionik diamniotik biasanya terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal dikorionik diamniotik yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur disebut dengan kehamilan kembar fraternal dikorionik diamniotik."
+        },
+        {
+        "question": "Apa itu kehamilan kembar fraternal dikorionik monoamniotik?",
+        "answer" :
+            "Kehamilan kembar fraternal dikorionik monoamniotik adalah kehamilan kembar fraternal yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal dikorionik monoamniotik juga disebut dengan kehamilan kembar fraternal dikorionik monoamniotik. Kehamilan kembar fraternal dikorionik monoamniotik biasanya terjadi karena pembuahan yang terjadi di lebih dari satu sel telur. Kehamilan kembar fraternal dikorionik monoamniotik yang terjadi karena pembuahan yang terjadi di lebih dari satu sel telur disebut dengan kehamilan kembar fraternal dikorionik monoamniotik."
+        },
+        {
+            "question": "Apa yang sebaiknya dihindari oleh ibu hamil?",
+            "answer": "Ibu hamil sebaiknya menghindari konsumsi alkohol, merokok, dan obat-obatan terlarang. Juga, hindari kontak dengan zat kimia berbahaya."
+          },
+          {
+            "question": "Berapa lama kehamilan normal?",
+            "answer": "Kehamilan normal berlangsung sekitar 40 minggu atau 9 bulan. Namun, setiap kehamilan dapat berbeda-beda."
+          },
+          {
+            "question": "Bagaimana cara merawat kulit selama kehamilan?",
+            "answer": "Untuk merawat kulit selama kehamilan, gunakan pelembap dan minyak yang aman untuk ibu hamil. Hindari bahan kimia yang berbahaya pada produk perawatan kulit."
+          },
+          {
+            "question": "Berapa kali saya sebaiknya melakukan pemeriksaan kehamilan?",
+            "answer": "Pemeriksaan kehamilan sebaiknya dilakukan secara rutin, biasanya setiap bulan pada trimester pertama dan dua minggu sekali pada trimester kedua hingga akhir kehamilan."
+          },
+          {
+            "question": "Apakah aman berolahraga selama kehamilan?",
+            "answer": "Olahraga ringan seperti berjalan, berenang, atau prenatal yoga umumnya aman selama kehamilan. Namun, konsultasikan dengan dokter sebelum memulai atau melanjutkan rutinitas olahraga."
+          },
+          {
+            "question": "Kapan saya sebaiknya mulai merencanakan persalinan?",
+            "answer": "Mulailah merencanakan persalinan dan pilih rumah sakit atau bidan yang sesuai dengan preferensi Anda pada trimester kedua kehamilan."
+          },
+          {
+            "question": "Apa yang harus dilakukan jika mengalami kram perut?",
+            "answer": "Jika mengalami kram perut, cobalah beristirahat, minum air putih, atau bergerak perlahan. Jika kram persisten atau intens, segera hubungi dokter."
+          },
+          {
+            "question": "Bagaimana cara mengatasi mual selama kehamilan?",
+            "answer": "Makan makanan ringan, hindari makanan berlemak atau berbau menyengat, dan konsumsi cemilan sehat dapat membantu mengatasi mual selama kehamilan."
+          },
+          {
+            "question": "Apa yang perlu diketahui tentang tanda-tanda persalinan?",
+            "answer": "Tanda-tanda persalinan termasuk kontraksi teratur, pendarahan, atau pecahnya air ketuban. Hubungi dokter jika mengalami tanda-tanda tersebut."
+          },
+          {
+            "question": "Bagaimana cara menjaga kehamilan agar tetap sehat?",
+            "answer": "Jaga pola makan sehat, cukup istirahat, hindari stres berlebihan, dan terlibat dalam aktivitas fisik yang sesuai. Selalu konsultasikan dengan dokter."
+          },
+          {
+            "question": "Bagaimana saya bisa mendapatkan nutrisi yang cukup selama kehamilan?",
+            "answer": "Pastikan untuk mengonsumsi makanan seimbang yang kaya akan vitamin dan mineral, dan pertimbangkan untuk mengonsumsi suplemen sesuai dengan anjuran dokter."
+          },
+          {
+            "question": "Apa makanan yang sebaiknya saya hindari untuk mencegah stunting?",
+            "answer": "Hindari makanan tinggi gula, lemak jenuh, dan makanan cepat saji. Fokus pada makanan yang bernutrisi tinggi."
+          },
+          {
+            "question": "Berapa porsi makan yang sebaiknya saya konsumsi setiap hari?",
+            "answer": "Konsultasikan dengan dokter atau ahli gizi untuk menentukan porsi makan yang sesuai dengan kebutuhan individu Anda."
+          }
+]
