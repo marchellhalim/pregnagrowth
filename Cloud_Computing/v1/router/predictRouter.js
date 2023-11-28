@@ -1,34 +1,36 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 const predictController = require('../controller/predictController');
 const multer = require('multer');
+const path = require('path');
+const tf = require('@tensorflow/tfjs');
 
-const stroge = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/')
+// Set up Multer for file uploading
+const storage = multer.diskStorage({
+    destination: 'uploads/',
+    filename: (req, file, cb) => {
+      cb(null, `${Date.now()}${path.extname(file.originalname)}`);
     },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname)
-    }
-})
-
-const upload = multer({ storage: stroge })
-
+  });
+  
+  const upload = multer({ storage });
+  
+  // Define the endpoint for uploading an image and predicting its freshness
 router.post('/', upload.single('image'), async (req, res) => {
-    try {
-        const result = await predictController.predict(req, res);
-        return res.status(200).json({
-            success: true,
-            result
-        });
-    } catch (error) {
-        return res.status(500).json({
-            success: false,
-            message: error.message
-        });
-    }
-}
-);
+    // Load the machine learning model
+    const model = require('../dataset/Model_18.h5');
+  
+    // Read the uploaded image
+    const image = tf.image.decodeImage(req.file.buffer);
+    const prediction = model.predict(image);
+  
+    // Determine the freshness based on the prediction
+    const freshness = prediction[0][0] > 0.5 ? 'Fresh' : 'Spoiled';
+  
+    res.json({
+      freshness: freshness,
+    });
+  });
 
 router.get('/', predictController.getAllPrediction);
 
