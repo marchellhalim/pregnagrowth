@@ -12,6 +12,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/model', express.static('D:/pelajaran kuliah/semester 7/capstone/pregnagrowth/Cloud_Computing/v1/dataset'));
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/role', roleRouter);
@@ -26,6 +27,6 @@ app.get('/', (req, res) => {
 )
 
 app.listen(port, () => {
-    console.log('Example app listening on port 8000!')
+    console.log('Backend app listening on port 8000!')
     }
 )

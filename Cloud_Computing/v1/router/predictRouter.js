@@ -4,33 +4,46 @@ const predictController = require('../controller/predictController');
 const multer = require('multer');
 const path = require('path');
 const tf = require('@tensorflow/tfjs');
+const { loadLayersModel } = require('@tensorflow/tfjs');
 
-// Set up Multer for file uploading
+
 const storage = multer.diskStorage({
-    destination: 'uploads/',
-    filename: (req, file, cb) => {
-      cb(null, `${Date.now()}${path.extname(file.originalname)}`);
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
     },
-  });
-  
-  const upload = multer({ storage });
-  
-  // Define the endpoint for uploading an image and predicting its freshness
+    filename: function (req, file, cb) {
+        cb(null, 'image-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
+
 router.post('/', upload.single('image'), async (req, res) => {
-    // Load the machine learning model
-    const model = require('../dataset/Model_18.h5');
-  
-    // Read the uploaded image
-    const image = tf.image.decodeImage(req.file.buffer);
-    const prediction = model.predict(image);
-  
-    // Determine the freshness based on the prediction
-    const freshness = prediction[0][0] > 0.5 ? 'Fresh' : 'Spoiled';
-  
-    res.json({
-      freshness: freshness,
+    let image = req.file.filename;
+    let model = await loadLayersModel('file://../dataset/labels.json');
+    let tensor = tf.image.resizeBilinear(tf.image.decodeJpeg(tf.node.decodeImage(req.file.buffer)), [224, 224]);
+    tensor = tf.cast(tensor, 'float32');
+    tensor = tf.expandDims(tensor, 0);
+    let prediction = await model.predict(tensor).data();
+    let result = [];
+    for (let i = 0; i < prediction.length; i++) {
+        result.push({
+            class: i,
+            probability: prediction[i]
+        });
+    }
+    result.sort((a, b) => {
+        return b.probability - a.probability;
     });
-  });
+    res.status(200).json({
+        success: true,
+        data: {
+            image: image,
+            prediction: result
+        }
+    });
+}
+);
 
 router.get('/', predictController.getAllPrediction);
 
