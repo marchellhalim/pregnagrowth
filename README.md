@@ -33,14 +33,18 @@ Aplikasi ini menyediakan API untuk pertanyaan yang sering diajukan oleh ibu hami
     ```
 
     Gantilah nilai variabel di dalam file `.env` sesuai dengan kebutuhan Anda.
+   Buat Database MySql:
+    ```bash
+    pregnaGrowthDb
+    ```
 
-6. Migrasikan database menggunakan Prisma:
+7. Migrasikan database menggunakan Prisma:
 
     ```bash
     npx prisma migrate dev
     ```
 
-7. Jalankan aplikasi:
+8. Jalankan aplikasi:
 
     ```bash
     npm run dev
