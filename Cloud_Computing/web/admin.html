@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Admin Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .admin-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .user-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .user-list li {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .crud-form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      .user-list {
+        list-style: none;
+        padding: 0;
+      }
+  
+      .user-list li {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+  
+      .delete-btn {
+        background-color: #d9534f;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+  </style>
+</head>
+<body>
+
+  <div class="admin-container">
+    <div class="sidebar">
+      <h1>Admin Dashboard</h1>
+      <ul class="nav">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Products</a></li>
+        <!-- Add more menu items as needed -->
+      </ul>
+    </div>
+
+    <div class="content">
+        <!-- simple crud form html and JavaScript -->
+        <h1>Users</h1>
+        <div class="crud-form">
+            <form id="crud-form">
+                <input type="hidden" id="id">
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="email" placeholder="Email">
+                <input type="text" id="password" placeholder="password">
+                <input type="text" id="username" placeholder="username">
+                <input type="text" id="tanggal_lahir" placeholder="tanggal_lahir">
+                <input type="text" id="role" placeholder="role">
+                <input type="submit" value="Save">
+            </form>
+        </div>
+        <ul class="user-list"></ul>
+    </div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('crud-form');
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const username = document.getElementById('username');
+        const tanggal_lahir = document.getElementById('tanggal_lahir');
+        const role = document.getElementById('role');
+        const userList = document.querySelector('.user-list');
+        const id = document.getElementById('id');
+        const submitBtn = document.querySelector('input[type="submit"]');
+        const url = 'http://localhost:8000/api/v1/user';
+        let editId = null;
+        let editState = false;
+        // Fetch users from API
+        const getUsers = () => {
+            userList.innerHTML = '';
+            fetch(url)
+              .then(res => res.json())
+              .then(data => {
+                const dataArray = Array.isArray(data) ? data : Object.values(data);
+                dataArray.forEach(user => {
+                  const li = document.createElement('li');
+                  li.innerHTML = `
+                    <strong>${user.name}</strong> - ${user.email} - ${user.password} - ${user.username} - ${user.tanggal_lahir} - ${user.role}
+                    <button class="delete-btn" data-id="${user.id}">Delete</button>
+                    <button class="edit-btn" data-id="${user.id}">Edit</button>
+                  `;
+                  userList.appendChild(li);
+                });
+              })
+              .catch(err => console.log(err));
+          };
+        console.log(url);
+        // Add a new user
+        const addUser = user => {
+        fetch(url, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+            const dataArr = [];
+            dataArr.push(data);
+            getUsers();
+            })
+            .catch(err => console.log(err));
+        };
+        // Delete a user
+        const deleteUser = id => {
+        fetch(`${url}/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(() => {
+            getUsers();
+            editState = false;
+            editId = null;
+            submitBtn.value = 'Save';
+            })
+            .catch(err => console.log(err));
+        };
+        // Update a user
+        const updateUser = (user, id) => {
+        fetch(`${url}/${id}`, {
+            method: 'PUT',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body
+        })
+            .then(res => res.json())
+            .then(() => {
+            getUsers();
+            editState = false;
+            editId = null;
+            submitBtn.value = 'Save';
+            })
+            .catch(err => console.log(err));
+        };
+        // Get user to edit
+        const getUser = id => {
+        fetch(`${url}/${id}`)
+            .then(res => res.json())
+            .then(data => {
+            name.value = data.name;
+            email.value = data.email;
+            password.value = data.password;
+            username.value = data.username;
+            tanggal_lahir.value = data.tanggal_lahir;
+            role.value = data.role;
+            })
+            .catch(err => console.log(err));
+        };
+        // Event: Add a user
+        form.addEventListener('submit', e => {
+        e.preventDefault();
+        if (!editState) {
+            const newUser = {
+            name: name.value,
+            email: email.value,
+            password: password.value,
+            username: username.value,
+            tanggal_lahir: tanggal_lahir.value,
+            role: role.value
+            };
+            addUser(newUser);
+        } else {
+            updateUser(
+            {
+                name: name.value,
+                email: email.value,
+                password: password.value,
+                username: username.value,
+                tanggal_lahir: tanggal_lahir.value,
+                role: role.value
+            },
+            editId
+            );
+        }
+        form.reset();
+        });
+        // Event: Delete a user
+        userList.addEventListener('click', e => {
+        if (e.target.classList.contains('delete-btn')) {
+            const id = e.target.getAttribute('data-id');
+            deleteUser(id);
+        }
+        if (e.target.classList.contains('edit-btn')) {
+            const id = e.target.getAttribute('data-id');
+            editState = true;
+            editId = id;
+            submitBtn.value = 'Update';
+            getUser(id);
+        }
+        });
+
+    </script>
+
+</body>
+</html>

@@ -8,6 +8,7 @@ const profileRouter = require('./router/profileRouter');
 const predictRouter = require('./router/predictRouter');
 const questionRouter = require('./router/questionRouter');
 const cors = require('cors');
+const path = require('path');
 
 app.use(cors());
 app.use(express.json());
@@ -21,10 +22,16 @@ app.use('/api/v1/profile', profileRouter);
 app.use('/api/v1/predict', predictRouter);
 app.use('/api/v1/question', questionRouter);
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-    }
-)
+// read html web
+app.use(express.static('public'))
+app.use(express.static('files'))
+
+app.use('/', express.static(path.join(__dirname, '../web')))
+// hot to run admin.html in web
+app.get('/admin', function(req, res) {
+    res.sendFile(path.join(__dirname, '../web/admin.html'));
+});
+
 
 app.listen(port, () => {
     console.log('Backend app listening on port 8000!')
