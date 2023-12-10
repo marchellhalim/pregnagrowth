@@ -115,3 +115,55 @@ Aplikasi ini menyediakan API untuk pertanyaan yang sering diajukan oleh ibu hami
 - Contoh Penggunaan API login dan register
   ```http
   GET /api/v1/role
+
+
+##Deploy Aplikasi Nodejs in GCP
+###Deploy Aplikasi Node.js di GCP dengan Compute Engine
+
+###Dokumentasi
+
+- Prasyarat
+1. Akun Google Cloud Platform
+2. Proyek Google Cloud Platform
+3. Lingkungan pengembangan Node.js
+4. Cloud SQL instance (opsional)
+
+###Langkah-langkah
+
+- Buat Proyek Google Cloud Platform:
+Buka https://console.cloud.google.com/: https://console.cloud.google.com/.
+Klik tombol Create Project.
+
+Aktifkan API:
+
+Buka https://console.cloud.google.com/apis/library/: https://console.cloud.google.com/apis/library/.
+Aktifkan API Compute Engine.
+(Opsional) Aktifkan API Cloud SQL jika menggunakan database.
+Buat VM Instance:
+
+Buka https://console.cloud.google.com/compute/instances/: https://console.cloud.google.com/compute/instances/.
+Klik tombol Create Instance.
+Konfigurasikan VM instance sesuai kebutuhan.
+Instal Node.js di VM Instance:
+Buka terminal pada VM instance.
+Jalankan perintah:
+```bash
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+```
+```bash
+sudo apt-get install -y nodejs
+```
+Deploy Aplikasi Node.js:
+Salin aplikasi Node.js ke VM instance.
+Jalankan perintah:
+```bash
+cd /path/to/app
+```
+```bash
+npm install
+```
+```bash
+npm start
+```
+Akses Aplikasi:
+Buka http://<instance_ip>:8080 di browser.
