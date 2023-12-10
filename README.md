@@ -137,19 +137,45 @@ Aplikasi ini menyediakan API untuk pertanyaan yang sering diajukan oleh ibu hami
     Buka https://console.cloud.google.com/apis/library/: https://console.cloud.google.com/apis/library/.
 - Aktifkan API Compute Engine.
 - (Opsional) Aktifkan API Cloud SQL jika menggunakan database.
-- Buat VM Instance:
+- Buat VM Instance and Firewal:
     Buka https://console.cloud.google.com/compute/instances/: https://console.cloud.google.com/compute/instances/.
-- Klik tombol Create Instance.
+      - Create VM Firewale in Compute Engine
+      - Create VM Instance
+      - Klik tombol Create Instance.
 - Konfigurasikan VM instance sesuai kebutuhan.
-- Instal Node.js di VM Instance:
+      - KOnfigurasi VM Instance
+      ```bash
+      gcloud compute instance list
+      ```
+      - Masuk ke ssh instance
+      ```bash
+      gcloud compute ssh <nama instance> --zone <isi zone instance>
+      ```
+      - Update pakage
+      ```bash
+      sudo apt update
+      ```     
+- Instal Node.js di VM Instance melalui cloud run :
 - Buka terminal pada VM instance.
     Jalankan perintah:
 ```bash
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 ```
 ```bash
 sudo apt-get install -y nodejs
 ```
+- Remove node_modules/
+      ```bash
+      rm -r node_modules/
+      ```
+- Keluar derectory
+      ```bash
+      cd ..
+      ```
+- Jalankan compute scp
+      ```bash
+      gcloud compute scp --recurse <nama folder apps> <nama instance>: --zone <zone instance>
+      ```
 Deploy Aplikasi Node.js:
 Salin aplikasi Node.js ke VM instance.
 Jalankan perintah:
@@ -164,3 +190,22 @@ npm start
 ```
 Akses Aplikasi:
 Buka http://<instance_ip>:8080 di browser.
+
+### Running tu pm2 
+- change derectory folder apps
+- install pm2 in instance
+  ```bash
+  sudo npm install pm2@latest -g
+  ```
+- use derectory folder index
+- running server apps with pm2
+  ```bash
+  PORT=8080 DEBUG=<nama folder apps>:* pm2 start <nama folder index>
+  ```
+- monitoring pm2
+  ```bash
+  pm2 logs
+  ```
+
+  ### selesai backend running/ online
+  HTTP://<externalIP>:8080 in browser
