@@ -117,10 +117,10 @@ Aplikasi ini menyediakan API untuk pertanyaan yang sering diajukan oleh ibu hami
   GET /api/v1/role
 
 
-##Deploy Aplikasi Nodejs in GCP
-###Deploy Aplikasi Node.js di GCP dengan Compute Engine
+## Deploy Aplikasi Nodejs in GCP
+### Deploy Aplikasi Node.js di GCP dengan Compute Engine
 
-###Dokumentasi
+### Dokumentasi
 
 - Prasyarat
 1. Akun Google Cloud Platform
@@ -128,25 +128,22 @@ Aplikasi ini menyediakan API untuk pertanyaan yang sering diajukan oleh ibu hami
 3. Lingkungan pengembangan Node.js
 4. Cloud SQL instance (opsional)
 
-###Langkah-langkah
+### Langkah-langkah
 
 - Buat Proyek Google Cloud Platform:
-Buka https://console.cloud.google.com/: https://console.cloud.google.com/.
-Klik tombol Create Project.
-
-Aktifkan API:
-
-Buka https://console.cloud.google.com/apis/library/: https://console.cloud.google.com/apis/library/.
-Aktifkan API Compute Engine.
-(Opsional) Aktifkan API Cloud SQL jika menggunakan database.
-Buat VM Instance:
-
-Buka https://console.cloud.google.com/compute/instances/: https://console.cloud.google.com/compute/instances/.
-Klik tombol Create Instance.
-Konfigurasikan VM instance sesuai kebutuhan.
-Instal Node.js di VM Instance:
-Buka terminal pada VM instance.
-Jalankan perintah:
+    Buka https://console.cloud.google.com/: https://console.cloud.google.com/.
+- Klik tombol Create Project.
+- Aktifkan API:
+    Buka https://console.cloud.google.com/apis/library/: https://console.cloud.google.com/apis/library/.
+- Aktifkan API Compute Engine.
+- (Opsional) Aktifkan API Cloud SQL jika menggunakan database.
+- Buat VM Instance:
+    Buka https://console.cloud.google.com/compute/instances/: https://console.cloud.google.com/compute/instances/.
+- Klik tombol Create Instance.
+- Konfigurasikan VM instance sesuai kebutuhan.
+- Instal Node.js di VM Instance:
+- Buka terminal pada VM instance.
+    Jalankan perintah:
 ```bash
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 ```
